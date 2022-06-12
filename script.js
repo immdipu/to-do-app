@@ -18,8 +18,6 @@ mode.addEventListener('click', function () {
 
 
 
-
-
 Sortable.create(simpleList);
 
 
