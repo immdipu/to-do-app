@@ -18,7 +18,9 @@ mode.addEventListener('click', function () {
 
 
 
-Sortable.create(simpleList);
+Sortable.create(simpleList, {
+    animation: 150
+});
 
 
 
