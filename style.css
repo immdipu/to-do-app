@@ -36,15 +36,53 @@
 
 body {
     background-color: var(--Very-Dark-Blue);
+
 }
 
+.mode {
+    transform: translateX(-34px) translateY(-13px);
+    cursor: pointer;
+}
+
+.modee {
+    position: absolute;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+
+}
+
+.moon {
+    opacity: 0;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+
+}
+
+
+.overlay {
+    border: 2px solid white;
+    height: 11%;
+    background: white;
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+    width: 5%;
+    left: 50%;
+    top: 50%;
+    transform: scale(0);
+    transition-duration: 1s;
+    transition-timing-function: linear;
+
+}
 
 
 .section_one {
     background-image: url(./images/bg-desktop-dark.jpg);
-    height: 18rem;
     background-repeat: no-repeat;
     padding-top: 4rem;
+    margin-bottom: 3rem;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 
 
@@ -82,6 +120,8 @@ body {
     position: absolute;
     transform: translateY(22px) translateX(15px);
     border: 1px solid hsl(0deg 0% 45%);
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 
 .typer {
@@ -94,6 +134,8 @@ body {
     border-radius: 10px;
     background-color: var(--Very-Dark-Desaturated-Blue);
     color: white;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 
 .typer:focus {
@@ -124,6 +166,8 @@ body {
     border: solid #8080804a;
     border-width: 0px 0px 1px 0;
     color: white;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 
 }
 
@@ -137,6 +181,10 @@ body {
     border-radius: 50%;
     height: 21px;
     -webkit-appearance: none;
+}
+
+.checkbox:hover {
+    border: 1px solid rgb(36, 19, 136);
 }
 
 .todo input:checked {
@@ -157,9 +205,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    min-height: 3rem;
+    min-height: 4rem;
     color: #b5b5b5;
     border-radius: 0px 0px 9px 9px;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 
 .todo_status {
@@ -199,6 +249,8 @@ body {
 
 .clear_completed {
     cursor: pointer;
+    padding: 12px 5px 12px 6px;
+
 }
 
 .li {
@@ -215,4 +267,126 @@ body {
 
 .hidden {
     display: none;
+}
+
+body.light .todo_status {
+    background-color: white;
+    color: rgb(99, 99, 99);
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+
+
+@media (max-width:550px) {
+    .section_one {
+        background-image: url(./images/bg-desktop-dark.jpg);
+        background-repeat: no-repeat;
+        padding-top: 4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-bottom: 8rem;
+    }
+
+    .todo_status {
+        display: flex;
+        gap: 20px;
+        transform: translateX(0px)translateY(86px);
+        background-color: var(--Very-Dark-Desaturated-Blue);
+        align-items: center;
+        justify-content: space-around;
+        color: #b5b5b5;
+        border-radius: 8px 8px 8px 8px;
+        width: 86%;
+        position: absolute;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+
+    }
+
+    body.light .todo_status {
+        background-color: white;
+        color: rgb(99, 99, 99);
+        transition-duration: 1s;
+        transition-timing-function: linear;
+        box-shadow: 0px 2px 5px #dbdada;
+    }
+
+    .todo_status p {
+        padding: 19px 8px 19px 8px;
+    }
+
+
+    .overlay {
+        border: 2px solid white;
+        height: 10%;
+        background: white;
+        position: fixed;
+        z-index: -1;
+        border-radius: 50%;
+        width: 13%;
+        left: 43%;
+        top: 69%;
+        transform: scale(0);
+        transition-duration: 1s;
+        transition-timing-function: linear;
+    }
+
+}
+
+
+/* LIGHT MODE*/
+
+
+body.light .sun {
+    opacity: 0;
+}
+
+body.light .moon {
+    opacity: 1;
+}
+
+body.light .overlay {
+    transform: scale(35);
+    transition-duration: 1s;
+    transition-timing-function: linear;
+
+}
+
+body.light .typer {
+    background-color: white;
+    color: rgb(88, 88, 88);
+    transition-duration: 1s;
+    transition-timing-function: linear;
+
+}
+
+
+body.light .circle {
+    background-color: white;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+body.light .todo {
+    background-color: white;
+    color: rgb(88, 88, 88);
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    box-shadow: 0px 2px 5px #dbdada;
+}
+
+body.light .footer {
+    background-color: white;
+    color: rgb(99, 99, 99);
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    box-shadow: 0px 2px 5px #dbdada;
+}
+
+body.light .section_one {
+    background-image: url(./images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }

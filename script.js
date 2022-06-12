@@ -3,13 +3,40 @@ const todoContainer = document.querySelector('.todo_container');
 const itemLeft = document.querySelector('.item_left');
 const clearCompleted = document.querySelector('.clear_completed');
 const li = document.querySelectorAll('.li');
+const mode = document.querySelector('.mode');
+const sun = document.querySelector('.sun');
+const moon = document.querySelector('.moon');
+const overlay = document.querySelector('.overlay');
+const circle = document.querySelector('.circle');
+const todo = document.querySelector('.todo')
+
+
+
+mode.addEventListener('click', function () {
+    document.body.classList.toggle('light');
+})
 
 
 
 
-let numb = 0;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// HTML FOR TODO
 
 const todohtml = function (todotext) {
 
@@ -19,6 +46,7 @@ const todohtml = function (todotext) {
     </div>`
 }
 
+// FUNCTION TO UPDATE NUMBER OF TODO LIST LEFT
 
 const numbOftodo = function () {
     document.querySelectorAll('.todo').forEach(i => i.classList.add('unchecked'));
@@ -34,6 +62,8 @@ const numbOftodo = function () {
 }
 
 
+// FUCNTION TO RENDER INPUT VALUE FROM INPUT FIELD
+
 const searchValue = function () {
     if (!typer.value == "") {
         let html = "";
@@ -45,6 +75,7 @@ const searchValue = function () {
 }
 
 
+// ENTER EVENTLISTENER 
 
 document.addEventListener('keydown', ((e) => {
     if (e.key == "Enter") {
@@ -54,6 +85,8 @@ document.addEventListener('keydown', ((e) => {
 }))
 
 
+
+// FUNCTION TO DELETE TO LIST
 
 const deletetext = function (e) {
     let element = e.target;
@@ -69,6 +102,7 @@ const deletetext = function (e) {
 todoContainer.addEventListener('click', deletetext)
 
 
+//  FUNCTION TO REMOVE ALL COMPLETED TODO
 
 const elementChecked = function () {
     const checkedBox = document.querySelectorAll('.checkbox:checked');
@@ -79,12 +113,11 @@ const elementChecked = function () {
     });
 }
 
-
-
-
-
 clearCompleted.addEventListener('click', elementChecked)
 
+
+
+// EVENETLISTNER FOR ALL, ACTIVE AND COMPLETED
 
 li[0].classList.add('activee');
 
@@ -133,4 +166,6 @@ li.forEach(item => {
     })
 
 })
+
+// DARK AND LIGHT MODE
 
